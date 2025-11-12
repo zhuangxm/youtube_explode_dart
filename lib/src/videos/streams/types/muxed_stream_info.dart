@@ -3,9 +3,9 @@ import 'package:http_parser/http_parser.dart';
 
 import '../../../reverse_engineering/models/fragment.dart';
 import '../../video_id.dart';
+import '../mixins/stream_info.dart';
 import '../models/audio_track.dart';
 import '../streams.dart';
-import '../mixins/stream_info.dart';
 
 part 'muxed_stream_info.g.dart';
 
@@ -66,8 +66,12 @@ class MuxedStreamInfo with StreamInfo, AudioStreamInfo, VideoStreamInfo {
   @override
   final String qualityLabel;
 
+  @override
+  final Map<String, dynamic> data;
+
   /// Initializes an instance of [MuxedStreamInfo]
   MuxedStreamInfo(
+    this.data,
     this.videoId,
     this.tag,
     this.url,

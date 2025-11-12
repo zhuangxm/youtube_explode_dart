@@ -280,6 +280,9 @@ class _StreamInfo extends StreamInfoProvider {
   @override
   final StreamSource source;
 
+  @override
+  late final Map<String, dynamic> data = root;
+
   _StreamInfo(this.root, this.source);
 }
 

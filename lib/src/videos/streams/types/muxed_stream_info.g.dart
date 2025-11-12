@@ -10,6 +10,7 @@ part of 'muxed_stream_info.dart';
 
 MuxedStreamInfo _$MuxedStreamInfoFromJson(Map<String, dynamic> json) =>
     MuxedStreamInfo(
+      json,
       VideoId.fromJson(json['videoId'] as Map<String, dynamic>),
       (json['tag'] as num).toInt(),
       Uri.parse(json['url'] as String),

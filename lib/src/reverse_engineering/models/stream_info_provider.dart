@@ -69,4 +69,6 @@ abstract class StreamInfoProvider {
   bool get videoOnly => false;
 
   int? get audioItag => null;
+
+  Map<String, dynamic> get data => {};
 }

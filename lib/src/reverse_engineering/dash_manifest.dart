@@ -186,6 +186,7 @@ class DashManifest {
 
             formats.add(
               _StreamInfo(
+                representationAttrib,
                 int.parse(representationAttrib['id']!),
                 baseUrl,
                 mimeType,
@@ -247,7 +248,11 @@ class _StreamInfo extends StreamInfoProvider {
   @override
   StreamSource get source => StreamSource.dash;
 
+  @override
+  final Map<String, dynamic> data;
+
   _StreamInfo(
+    this.data,
     this.tag,
     this.url,
     this.codec,

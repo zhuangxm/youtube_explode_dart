@@ -104,6 +104,7 @@ class HlsManifest {
 
       streams.add(
         _StreamInfo(
+          video.params,
           itag,
           video.url,
           audioCodec,
@@ -197,7 +198,11 @@ class _StreamInfo extends StreamInfoProvider {
   @override
   final int? audioItag;
 
+  @override
+  final Map<String, dynamic> data;
+
   _StreamInfo(
+    this.data,
     this.tag,
     this.url,
     this.audioCodec,

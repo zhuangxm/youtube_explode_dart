@@ -39,6 +39,8 @@ mixin StreamInfo {
   /// Stream quality label.
   String get qualityLabel;
 
+  Map<String, dynamic> get data;
+
   /// Convert to a json-serialized type.
   Map<String, dynamic> toJson();
 }

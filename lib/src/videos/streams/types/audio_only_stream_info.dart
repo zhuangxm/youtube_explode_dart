@@ -46,7 +46,11 @@ class AudioOnlyStreamInfo with StreamInfo, AudioStreamInfo {
   @override
   final AudioTrack? audioTrack;
 
+  @override
+  final Map<String, dynamic> data;
+
   AudioOnlyStreamInfo(
+      this.data,
       this.videoId,
       this.tag,
       this.url,

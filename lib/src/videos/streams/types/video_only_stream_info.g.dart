@@ -10,6 +10,7 @@ part of 'video_only_stream_info.dart';
 
 VideoOnlyStreamInfo _$VideoOnlyStreamInfoFromJson(Map<String, dynamic> json) =>
     VideoOnlyStreamInfo(
+      json,
       VideoId.fromJson(json['videoId'] as Map<String, dynamic>),
       (json['tag'] as num).toInt(),
       Uri.parse(json['url'] as String),

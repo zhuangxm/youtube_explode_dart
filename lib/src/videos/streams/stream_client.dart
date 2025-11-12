@@ -333,6 +333,7 @@ class StreamClient {
       if (stream.source == StreamSource.hls) {
         if (stream.audioOnly) {
           yield HlsAudioStreamInfo(
+            stream.data,
             videoId ?? watchPage.videoId,
             itag,
             url,
@@ -357,6 +358,7 @@ class StreamClient {
 
         if (stream.videoOnly) {
           yield HlsVideoStreamInfo(
+            stream.data,
             videoId ?? watchPage.videoId,
             itag,
             url,
@@ -373,6 +375,7 @@ class StreamClient {
           );
         } else {
           yield HlsMuxedStreamInfo(
+            stream.data,
             videoId ?? watchPage.videoId,
             itag,
             url,
@@ -408,6 +411,7 @@ class StreamClient {
             stream.source != StreamSource.adaptive) {
           assert(stream.audioTrack == null);
           yield MuxedStreamInfo(
+            stream.data,
             videoId ?? watchPage.videoId,
             itag,
             url,
@@ -427,6 +431,7 @@ class StreamClient {
 
         // Video only
         yield VideoOnlyStreamInfo(
+          stream.data,
           videoId ?? watchPage.videoId,
           itag,
           url,
@@ -445,6 +450,7 @@ class StreamClient {
         // Audio-only
       } else if (!audioCodec.isNullOrWhiteSpace) {
         yield AudioOnlyStreamInfo(
+            stream.data,
             videoId ?? watchPage.videoId,
             itag,
             url,

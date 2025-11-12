@@ -51,8 +51,12 @@ class HlsAudioStreamInfo with StreamInfo, AudioStreamInfo, HlsStreamInfo {
   @override
   final String qualityLabel;
 
+  @override
+  final Map<String, dynamic> data;
+
   /// Initializes an instance of [HlsAudioStreamInfo]
   HlsAudioStreamInfo(
+    this.data,
     this.videoId,
     this.tag,
     this.url,

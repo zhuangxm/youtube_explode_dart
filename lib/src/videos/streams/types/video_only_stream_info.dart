@@ -53,7 +53,11 @@ class VideoOnlyStreamInfo with StreamInfo, VideoStreamInfo {
   @JsonKey(toJson: mediaTypeToJson, fromJson: mediaTypeFromJson)
   final MediaType codec;
 
+  @override
+  final Map<String, dynamic> data;
+
   VideoOnlyStreamInfo(
+    this.data,
     this.videoId,
     this.tag,
     this.url,

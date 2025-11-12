@@ -4,8 +4,8 @@ import 'package:http_parser/http_parser.dart';
 import '../../../../reverse_engineering/models/fragment.dart';
 import '../../../video_id.dart';
 import '../../mixins/hls_stream_info.dart';
-import '../../streams.dart';
 import '../../mixins/stream_info.dart';
+import '../../streams.dart';
 
 part 'hls_video_stream_info.g.dart';
 
@@ -69,8 +69,12 @@ class HlsVideoStreamInfo with StreamInfo, VideoStreamInfo, HlsStreamInfo {
   @override
   final int? audioItag;
 
+  @override
+  final Map<String, dynamic> data;
+
   /// Initializes an instance of [HlsVideoStreamInfo]
   HlsVideoStreamInfo(
+      this.data,
       this.videoId,
       this.tag,
       this.url,

@@ -10,6 +10,7 @@ part of 'hls_audio_stream_info.dart';
 
 HlsAudioStreamInfo _$HlsAudioStreamInfoFromJson(Map<String, dynamic> json) =>
     HlsAudioStreamInfo(
+      json,
       VideoId.fromJson(json['videoId'] as Map<String, dynamic>),
       (json['tag'] as num).toInt(),
       Uri.parse(json['url'] as String),

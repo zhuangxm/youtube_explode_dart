@@ -4,9 +4,9 @@ import 'package:http_parser/http_parser.dart';
 import '../../../../reverse_engineering/models/fragment.dart';
 import '../../../video_id.dart';
 import '../../mixins/hls_stream_info.dart';
+import '../../mixins/stream_info.dart';
 import '../../models/audio_track.dart';
 import '../../streams.dart';
-import '../../mixins/stream_info.dart';
 
 part 'hls_muxed_stream_info.g.dart';
 
@@ -73,8 +73,12 @@ class HlsMuxedStreamInfo
   @override
   final String qualityLabel;
 
+  @override
+  final Map<String, dynamic> data;
+
   /// Initializes an instance of [HlsMuxedStreamInfo]
   HlsMuxedStreamInfo(
+    this.data,
     this.videoId,
     this.tag,
     this.url,
